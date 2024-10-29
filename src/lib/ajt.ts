@@ -1,4 +1,4 @@
-export const ajtValidator = (input: string) => {
+const ajtValidator = (input: string) => {
     let pattern = '^'; // Start with beginning anchor for regex
     let flags = 'g'; // Default regex flags
   
@@ -59,5 +59,7 @@ export const ajtValidator = (input: string) => {
       }
     };
   };
+
+  export default ajtValidator;
   
   
