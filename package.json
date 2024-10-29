@@ -1,0 +1,22 @@
+{
+  "name": "ajt-validator",
+  "version": "0.0.0",
+  "description": "A javascript/typescript validator",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "clean": "del ./build/*",
+    "build": "npm run clean && tsc",
+    "pub": "git add . && git commit -am \"Updates\" && npm version patch && npm run build && npm publish"
+  },
+  "devDependencies": {
+    "del-cli": "^5.1.0",
+    "typescript": "^5.6.2"
+  },
+  "keywords": [],
+  "author": "Albin Joseph",
+  "license": "ISC"
+}
