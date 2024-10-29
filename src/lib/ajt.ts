@@ -60,6 +60,6 @@ const ajtValidator = (input: string) => {
     };
   };
 
-  export default ajtValidator;
+  export { ajtValidator };
   
   

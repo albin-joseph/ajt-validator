@@ -1,1 +1,1 @@
-export { default as ajtValidator } from './lib/ajt';
+export { ajtValidator } from './lib/ajt';
