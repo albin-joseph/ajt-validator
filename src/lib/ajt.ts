@@ -1,67 +1,72 @@
-export class ajtValidator {
-    private pattern: string; // Holds the regex pattern
-    private flags: string;   // Regex flags
+export type AllowedTypes = 'alphanumeric' | 'digits' | 'letters' | 'special';
 
-    constructor() {
-        this.pattern = ''; // Initialize the pattern
-        this.flags = 'g';  // Default regex flags
-    }
-
-    // Set the input type (string validation)
-    isString(): this {
-        this.pattern += '^.*$'; // Accept any string by default
-        return this;
-    }
-
-    // Set maximum length
-    maxLen(max: number): this {
-        this.pattern = this.pattern.replace(/\$$/, ''); // Remove end-anchor temporarily
-        this.pattern += `.{0,${max}}$`; // Enforce max length
-        return this;
-    }
-
-    // Set minimum length
-    minLen(min: number): this {
-        this.pattern = this.pattern.replace(/\$$/, ''); // Remove end-anchor temporarily
-        this.pattern += `.{${min},}`; // Enforce min length
-        return this;
-    }
-
-    // Allow specific character types (e.g., alphanumeric, digits, etc.)
-    isAllow(type: 'alphanumeric' | 'digits' | 'letters' | 'special'): this {
-        switch (type) {
-            case 'alphanumeric':
-                this.pattern = this.pattern.replace(/\^.*\$/, '[a-zA-Z0-9]*');
-                break;
-            case 'digits':
-                this.pattern = this.pattern.replace(/\^.*\$/, '\\d*');
-                break;
-            case 'letters':
-                this.pattern = this.pattern.replace(/\^.*\$/, '[a-zA-Z]*');
-                break;
-            case 'special':
-                this.pattern = this.pattern.replace(/\^.*\$/, '[!@#$%^&*]*');
-                break;
-            default:
-                throw new Error(`Unsupported type: ${type}`);
-        }
-        return this;
-    }
-
-    // Set case-insensitive flag (optional)
-    caseInsensitive(): this {
-        this.flags += 'i';
-        return this;
-    }
-
-    // Build and return the regex pattern
-    build(): RegExp {
-        return new RegExp(this.pattern, this.flags);
-    }
-
-    // Validate a given input string
-    validate(input: string): boolean {
-        const regex = this.build();
-        return regex.test(input);
-    }
+interface Validator {
+  isString(): this;
+  maxLen(max: number): this;
+  minLen(min: number): this;
+  isAllow(type: AllowedTypes): this;
+  caseInsensitive(): this;
+  validate(): boolean;
 }
+
+export const isValid = (input: string): Validator => {
+  let pattern = '^'; // Start with beginning anchor for regex
+  let flags = 'g'; // Default regex flags
+
+  return {
+    // Validate if the input is a string
+    isString() {
+      if (typeof input !== 'string') {
+        throw new Error('Input is not a string');
+      }
+      return this;
+    },
+
+    // Set the maximum length constraint
+    maxLen(max: number) {
+      pattern += `.{0,${max}}$`; // Ends with a max length constraint
+      return this;
+    },
+
+    // Set the minimum length constraint
+    minLen(min: number) {
+      pattern = pattern.replace(/\^/, `^.{${min},`); // Start with min length constraint
+      return this;
+    },
+
+    // Allow specific character types (e.g., alphanumeric, digits, special characters)
+    isAllow(type: AllowedTypes) {
+      let charClass = '';
+      switch (type) {
+        case 'alphanumeric':
+          charClass = '[a-zA-Z0-9]';
+          break;
+        case 'digits':
+          charClass = '\\d';
+          break;
+        case 'letters':
+          charClass = '[a-zA-Z]';
+          break;
+        case 'special':
+          charClass = '[!@#$%^&*]';
+          break;
+        default:
+          throw new Error(`Unsupported type: ${type}`);
+      }
+      pattern = pattern.replace(/\$/, `${charClass}*$`); // Append allowed characters
+      return this;
+    },
+
+    // Make the regex case-insensitive
+    caseInsensitive() {
+      flags += 'i';
+      return this;
+    },
+
+    // Build and test the final regex pattern
+    validate() {
+      const regex = new RegExp(pattern, flags);
+      return regex.test(input);
+    }
+  };
+};
