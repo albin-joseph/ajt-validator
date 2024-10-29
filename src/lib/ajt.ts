@@ -1,4 +1,4 @@
-export class ajValidator {
+export class ajtValidator {
     private pattern: string; // Holds the regex pattern
     private flags: string;   // Regex flags
 
