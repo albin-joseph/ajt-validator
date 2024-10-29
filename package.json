@@ -1,6 +1,6 @@
 {
   "name": "ajt-validator",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A lightweight input validator package for TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,11 @@
   },
   "author": "Albin Joseph",
   "license": "MIT",
-  "keywords": ["typescript", "validator", "input-validation"],
+  "keywords": [
+    "typescript",
+    "validator",
+    "input-validation"
+  ],
   "devDependencies": {
     "del-cli": "^5.1.0",
     "typescript": "^5.6.2"
