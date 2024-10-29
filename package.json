@@ -1,6 +1,6 @@
 {
   "name": "ajt-validator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A javascript/typescript validator",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
