@@ -1,27 +1,26 @@
 {
   "name": "ajt-validator",
   "version": "0.0.11",
-  "description": "A javascript/typescript validator",
-  "main": "./build/index.js",
-  "types": "./build/index.d.ts",
-  "files": [
-    "build/**/*"
-  ],
+  "description": "A lightweight input validator package for TypeScript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "del ./build/*",
+    "clean": "del ./dist/*",
     "build": "npm run clean && tsc",
     "pub": "git add . && git commit -am \"Updates\" && npm version patch && npm run build && npm publish"
   },
-  "devDependencies": {
-    "@types/node": "^22.8.2",
-    "del-cli": "^5.1.0",
-    "typescript": "^5.6.3"
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albin-joseph/ajt-validator.git"
   },
-  "keywords": [],
   "author": "Albin Joseph",
-  "license": "ISC",
-  "type": "module",
-  "dependencies": {
-    "tslib": "^2.8.0"
+  "license": "MIT",
+  "keywords": ["typescript", "validator", "input-validation"],
+  "devDependencies": {
+    "del-cli": "^5.1.0",
+    "typescript": "^5.6.2"
   }
 }
