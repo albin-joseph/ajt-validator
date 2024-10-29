@@ -18,5 +18,6 @@
   },
   "keywords": [],
   "author": "Albin Joseph",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module" 
 }
