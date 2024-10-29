@@ -13,8 +13,9 @@
     "pub": "git add . && git commit -am \"Updates\" && npm version patch && npm run build && npm publish"
   },
   "devDependencies": {
+    "@types/node": "^22.8.2",
     "del-cli": "^5.1.0",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.3"
   },
   "keywords": [],
   "author": "Albin Joseph",
