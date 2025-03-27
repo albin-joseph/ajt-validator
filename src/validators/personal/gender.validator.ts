@@ -12,6 +12,7 @@ export enum GenderOption {
   PREFER_NOT_TO_SAY = 'prefer-not-to-say'
 }
 
+
 /**
  * Options for configuring gender validation
  */
