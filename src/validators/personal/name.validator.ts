@@ -1,7 +1,7 @@
 import { BaseValidator } from "../base";
 import { ValidationResult } from "../../interfaces";
 
-interface NameValidatorOptions {
+export interface NameValidatorOptions {
     minLength?: number;
     maxLength?: number;
     allowSpecialChars?: boolean;

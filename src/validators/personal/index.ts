@@ -1,7 +1,7 @@
 import {AgeValidatorOptions, AgeValidationResult, AgeValidator} from './age.validator'
 import {GenderValidator, GenderOption, GenderValidatorOptions, GenderValidationResult} from './gender.validator'
 import {DOBValidatorOptions, DOBValidationResult, DOBValidator} from './dob.validator'
-export { NameValidator } from './name.validator'
+import { NameValidator, NameValidatorOptions } from './name.validator'
 
 export {
     AgeValidatorOptions,
@@ -13,5 +13,7 @@ export {
     GenderValidatorOptions,
     DOBValidatorOptions, 
     DOBValidationResult, 
-    DOBValidator
+    DOBValidator,
+    NameValidator,
+    NameValidatorOptions
 }
