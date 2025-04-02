@@ -1,6 +1,6 @@
 {
   "name": "ajt-validator",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "A lightweight input validator package for TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
