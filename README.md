@@ -74,17 +74,6 @@ class CustomValidator extends BaseValidator {
 }
 
 ```
-## Keywords
-- validation
-- form-validation
-- typescript
-- javascript
-- validator
-- data-validation
-- input-validation
-- personal-data
-- dob-validator
-- name-validator
 
 ## License
 MIT

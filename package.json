@@ -19,9 +19,15 @@
   "author": "Albin Joseph",
   "license": "MIT",
   "keywords": [
+    "validation",
     "typescript",
     "validator",
-    "input-validation"
+    "input-validation",
+    "form-validation",
+    "data-validation",
+    "personal-data",
+    "dob-validator",
+    "name-validator"
   ],
   "devDependencies": {
     "del-cli": "^5.1.0",
