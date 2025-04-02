@@ -28,12 +28,15 @@ A comprehensive, flexible validation library for JavaScript and TypeScript appli
  - `NumberValidator` - Numeric validation with range checking
  - `DateValidator` - Date format and range validation
 
-## Getting Started
+## Installation
 
 ```bash
 npm install ajt-validator
 
 ```
+
+## Usage
+
 ```
 import { PersonalValidator } from 'ajt-validator';
 
@@ -71,6 +74,17 @@ class CustomValidator extends BaseValidator {
 }
 
 ```
+## Keywords
+- validation
+- form-validation
+- typescript
+- javascript
+- validator
+- data-validation
+- input-validation
+- personal-data
+- dob-validator
+- name-validator
 
 ## License
 MIT
