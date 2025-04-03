@@ -1,4 +1,5 @@
 // export * from './lib/ajt';
 
 import * as PersonalValidator from './validators/personal';
-export {PersonalValidator}
+import * as ContactValidator from './validators/contact';
+export {PersonalValidator, ContactValidator}
