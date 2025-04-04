@@ -26,8 +26,11 @@ A comprehensive, flexible validation library for JavaScript and TypeScript appli
 - `AddressValidator` - Address validation with customizable field requirements
 
 ### Authentication
-- `PasswordValidator` - Password strength and format validation
-- `UsernameValidator` - Username format validation
+- `PasswordValidator` - Password strength and format validation with complexity requirements
+- `UsernameValidator` - Username format validation with blocked username detection
+- `ApiKeyValidator` - API key validation with format and prefix validation
+- `TokenValidator` - Authentication token validation including JWT support
+- `TwoFactorValidator` - Two-factor authentication code validation with expiration checking
 
 ### General Purpose
 - `StringValidator` - Text validation with length and format options
