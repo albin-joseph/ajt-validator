@@ -1,6 +1,6 @@
 {
   "name": "ajt-validator",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Validation library for JavaScript and TypeScript ",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
