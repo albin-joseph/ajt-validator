@@ -10,7 +10,6 @@ A comprehensive, flexible validation library for JavaScript and TypeScript appli
 - **Rich validation results** - Detailed error information and metadata
 - **Zero dependencies** - Lightweight and efficient
 - **Framework agnostic** - Works with any JS/TS project
-
 ## Core Validators
 
 ### Personal Information
@@ -24,6 +23,10 @@ A comprehensive, flexible validation library for JavaScript and TypeScript appli
 - `EmailValidator` - Email address validation with domain restrictions
 - `PhoneValidator` - Phone number validation with international format support
 - `AddressValidator` - Address validation with customizable field requirements
+
+### Financial Information
+- `BankAccountValidator` - Bank account validation with routing number checksum verification
+- `CreditCardValidator` - Credit card validation with Luhn algorithm and card type detection
 
 ### Authentication
 - `PasswordValidator` - Password strength and format validation with complexity requirements

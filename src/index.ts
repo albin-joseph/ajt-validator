@@ -3,4 +3,5 @@
 import * as PersonalValidator from './validators/personal';
 import * as ContactValidator from './validators/contact';
 import * as AuthenticationValidator from './validators/authentication';
-export {PersonalValidator, ContactValidator, AuthenticationValidator}
+import * as FinancialValidator from './validators/financial';
+export {PersonalValidator, ContactValidator, AuthenticationValidator, FinancialValidator}
